@@ -1,19 +1,8 @@
 #include <iostream>
 #include <string>
-class Cuentacorriente{
-	private:
-		string NombreEmpresa,Correoelectronico,Numerodecuenta,password;
-	    int Fondos;
-	    
-	    
-	    
-	public:
-	    Datospersonales{}: NombreEmpresa(""), Correoelectronico(""), Numerodecuenta("0000 0000 0000 0000 0000 0000"), Fondos(11781.50),Password("******"){}; // Valores por default
-		Datospersonales(string NomEmp, string Corr, Numerodecuenta, string password, int Fondos): NombreEmpresa(Nom), Correoelectronico(Corr),Numerodecuenta(num), Fondos(Fond){};
-			
-		void setNombre(string Nom);
-		void setCorreo(string Corr);
-		void setNombreEmpresa(string nom);
-		void setFondos(int fond);
-		void setPassword(string pass);
+/*Aqui se crea una subclase que es un hijo de la clase Cuenta y hereda todos sus atributos mas los suyso propios... por aqhora
+solo se ha colocado un default para demostrar la herencia. mas adelante y con mas tiempo este tednra sus propios atributos al igual que sus hermanos */
+class CuentaEmpresarial::public Cuenta{
+	public (string Nom,string Pass): Cuenta(Nom,19,6789 9040 6794 2550 1010 6080,18000, "Pass"){
+	}
 };
