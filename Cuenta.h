@@ -1,66 +1,63 @@
-/*Diego Resenidz fernandez
+#ifndef CUENTA_H_
+#define CUENTA_H_
+/*Diego Reséndiz fernández
 Matricula: A01708017
-Esta es nuetra clase padre. es la clase de la cual se crearan otras subclases, en este caso, la clase Cuenta es la clase "Molde" de la cual las demas clases
-es decir, los demas tipo de cuenta se basaran. */
+Eesta es nuetra clase padre. es la clase de la cual se crearan otras subclases, en este caso, la clase Cuenta es la clase "Molde" de la cual las demas clases
+es decir, los demas tipo de cuenta se basaran en esta clase. */
 #include <iostream>
 #include <string>
- class Cuenta{
- 	private:
- 		string Nombre,password;
-	    int edad,Fondos,Numerodecuenta;
-	
+#include <stdlib.h>
+#include <time.h>
+using namespace std;
+/*Para declarar una clase primero se introduce el comando class y seguido del nombre de la clase*/
+class Cuenta{
+/*En el apratado de private se introducen los atributos de la clase, es decir, se incializan variables que seran carateristica de la clase*/
+ 	//Atributos
+ 	private: 
+	    int NumeroCuenta;
+	    float fondos;
+	    string password;
+		string Nombre;
+	/*En el apartado de public se ponen los metodos. Los metodos son un conjunto de funciones que permiten que tu clase obtenga
+	los datos para darle un valor a sus atributos para construir el objeto y ademas para que ese objeto tenga interactividad con otro objeto o con el usuario
+	en este caso en los metodos tengo un metodo para construir el objeto y ademas metodos para interactuar con el objeto */
+	//Metodos
 	public:
-		Datospersonales{}: Nombre(""), edad(0), Numerodecuenta(0000 0000 0000 0000 0000 0000), Fondos(0),Password("******"){}; // Valores por default
-		Datospersonales(string Nom, int ed,int Num, string password, int Fondos): Nombre(Nom), edad(ed),Numerodecuenta(num), Fondos(Fond),Password(pass){};
+		//Constructor
+		Cuenta(string _Nombre, string _password, float _fondos, int _NumeroCuenta){
+			Nombre=_Nombre;
+			password=_password;
+			fondos=_fondos;
+			NumeroCuenta=_NumeroCuenta;
+	     }
 		//setters	
-		void set_Nombre(string Nombre);
-		void set_Edad(int edad);
-		void set_Numero(string Numerodecuenta);
-		void set_Fondos(int Fondos);
-		void set_Password(string password);
+		void set_Fondos(float _fondos){
+			fondos = _fondos;
+			}
+		void set_Password(string _password){
+				password = _password;
+		}
+		
 		//Getters	
-		void get_Nombre();
-		void get_Edad();
-		void get_Numero();
-		void get_Fondos();
-		void get_Password();
-};
+		string get_Nombre();
+		int get_NumeroCuenta();
+		float get_Fondos();
+		string get_Password();
+	};
+////////////////////////////////////////////////////////////////////////////////////////////////
 
-////////
-void Cuenta::set_Edad(int edad){
-	edad=ed;
+//Getters
+int Cuenta::get_NumeroCuenta(){
+	return NumeroCuenta;
 }
-void Cuenta::set_Nombre(string Nombre){
-	Nom=Nombre;
-}
-
-
-void Cuenta::set_Fondos(int Fondos){
-	Fond=Fondos;
-}
-void Cuenta::set_Password(string password){
-	pass=Password;
-}
-void Cuenta::set_Numerodecuenta(int Numerodecuenta){
-	Num=Numerodecuenta;
-}
-//Gette
-}
-int Cuenta::get_edad(){
-	return ed;
-}
-string Cuenta::get_Nombre(){
-	return Nom:
-}
-
-int Cuenta::get_Numerodecuenta(){
-	return Num;
-}
-
-
 string Cuenta::get_Password(){
-	return pass;
+	return password;
 }
-int CuentaAhorro::get_Fondos(){
-	return Fond;
+
+float Cuenta::get_Fondos(){
+	return fondos;
  }
+ string Cuenta::get_Nombre(){
+	return Nombre;
+}
+#endif
